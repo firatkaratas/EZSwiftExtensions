@@ -32,6 +32,12 @@ extension String {
     func count(substring: String) -> Int{
         return componentsSeparatedByString(substring).count - 1
     }
+    
+    /// EZSE: Cut string from given first index to last index
+    func substring(firstIndex: Int, lastIndex: Int) -> String {
+        let range = startIndex.advancedBy(firstIndex)..<endIndex.advancedBy(lastIndex - characters.count)
+        return self[range]
+    }
 
     /// EZSE: Capitalizes first character of String
     public var capitalizeFirst: String {
